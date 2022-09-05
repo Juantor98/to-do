@@ -8,6 +8,11 @@ export const Form = ({tareas, setTareas}) => {
 
     const [error, setError] = useState(false);
 
+    const generarId = () => {
+        const id = Math.random().toString(20).substring(2);
+        return id;
+    };
+
     //Validación de campos del formulario
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,6 +26,7 @@ export const Form = ({tareas, setTareas}) => {
 
         //Objeto de tareas
         const  objetoTareas = {
+            id: generarId(),
             titulo,
             fecha,
             descripcion
