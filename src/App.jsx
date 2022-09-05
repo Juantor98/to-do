@@ -14,7 +14,9 @@ function App() {
           tareas={tareas}
           setTareas={setTareas}
         />
-        <TaskList />
+        <TaskList 
+          tareas={tareas}
+        />
       </div>
     </div>
   )

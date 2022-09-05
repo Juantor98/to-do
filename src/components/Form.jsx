@@ -40,7 +40,10 @@ export const Form = ({tareas, setTareas}) => {
         </h2>
 
         <form onSubmit={handleSubmit} className='bg-white shadow-md rounded-lg py-10 px-5 mb-10'>
-            {error && <AlertError mensaje='Faltan campos por diligenciar'/>}
+            {error && 
+                <AlertError>
+                    <p>Todos los campos son obligatorios</p>
+                </AlertError>}
             <div className='mb-5'>
                 <label 
                     htmlFor='titulo' 
