@@ -1,12 +1,19 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { AlertError } from "./AlertError"
 
-export const Form = ({tareas, setTareas}) => {
+export const Form = ({tareas, setTareas, tarea}) => {
     const [titulo, setTitulo] = useState('')
     const [fecha, setFecha] = useState('')
     const [descripcion, setDescripcion] = useState('')
-
     const [error, setError] = useState(false);
+
+    useEffect(() => {
+        if(Object.keys(tarea).length > 0){
+            setTitulo(tarea.titulo);
+            setFecha(tarea.fecha);
+            setDescripcion(tarea.descripcion);
+        }
+    }, [tarea])
 
     const generarId = () => {
         const id = Math.random().toString(20).substring(2);

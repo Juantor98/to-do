@@ -1,5 +1,5 @@
 
-export const Task = ({tarea}) => {
+export const Task = ({tarea, setTarea}) => {
 
   const {titulo, fecha, descripcion} = tarea;
 
@@ -15,6 +15,21 @@ export const Task = ({tarea}) => {
         Descipción:{" "}
         <span className="font-normal normal-case">{descripcion}</span>
       </p>
+      <div className="flex justify-between">
+        <button 
+          className="bg-green-600 hover:bg-green-700 mt-4 py-2 px-10 rounded-md text-white font-bold" 
+          type="button"
+          onClick={() => setTarea(tarea)}
+        >
+          Actualizar
+        </button>
+        <button 
+          className="bg-red-600 hover:bg-red-700 mt-4 py-2 px-10 rounded-md text-white font-bold" 
+          type="button"
+        >
+          Eliminar
+        </button>
+      </div>
     </div>
   );
 };
