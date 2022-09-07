@@ -104,11 +104,19 @@ export const Form = ({tareas, setTareas, tarea}) => {
                     onChange={(e) => setDescripcion(e.target.value)}
                 />
             </div>
-            <input 
+            {!tarea.id ? (                
+                <input 
                 type="submit"
                 className='bg-blue-600 w-full p-3 text-white uppercase font-bold rounded-md hover:bg-blue-700 transition-colors cursor-pointer'
                 value="Crear Tarea"
-            />
+                />
+            ) : (                
+                <input 
+                type="submit"
+                className='bg-purple-600 w-full p-3 text-white uppercase font-bold rounded-md hover:bg-blue-700 transition-colors cursor-pointer'
+                value="Actualizar Tarea"
+                />
+            )}
         </form>
     </div>
   )
